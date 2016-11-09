@@ -216,8 +216,35 @@ pre {
 
 <section class='container'>
           <hgroup>
-            <h1>Welcome to your GoBitWheel</h1>
+            <h1>Welcome to GoBitWheel</h1>
           </hgroup>
+          
+          <form action="" method="post">
+          	<label for="username"><h2>Username</h2></label>
+          	<input type="text" name="username" id="username"  placeholder="Firstname Lastname"/>
+			
+			<label for="username"><h2>Password</h2></label>
+			<input type="password" name="password" id="password" placeholder="minimum 6 characters"/>
+			
+			<h1></h1>
+			<input type="image" src="http://joinherbal.com/site/images/login-button1.png" border="0" alt="Submit" />	
+          </form>
+          
+          <h2>Request information</h2>
+                <p>Page view count:
+                <% if (pageCountMessage) { %>
+                   <span class="code" id="count-value"><%=pageCountMessage%></span>
+                   </p>
+                    <div class="code"><h3>DB Connection Info:</h3>
+                      <table style='margin-left: 20px'>
+                          <tr><td>Type:</td><td><%= dbInfo.type %></td></tr>
+                          <tr><td>URL:</td><td><%= dbInfo.url %></td></tr>
+                      </table>
+                    </div>
+                <% } else { %>
+                   <span class="code" id="count-value">No database configured</span>
+                   </p>
+                <%} %>
 
         <footer>
           <div class="logo"><a href="https://www.openshift.com/"></a></div>
